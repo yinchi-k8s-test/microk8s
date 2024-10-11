@@ -122,3 +122,9 @@ go install github.com/kubecolor/kubecolor@latest # Adds color to kubectl
 go install github.com/derailed/k9s@latest # Kubernetes CLI
 go install github.com/charmbracelet/glow@latest # Markdown rendering in the terminal
 ```
+
+### Pureline
+Follow the instructions at https://github.com/chris-marsh/pureline to install and customise `pureline`, which provides an improved command-line prompt.
+
+## `.bashrc` and `.bash_aliases`
+Example `.bashrc` and `.bash_aliases` scripts are included in this repo as `example.bashrc` and `example.bash_aliases`, respectively.  These will set up useful alias and bash functions as well as enable auto-completions for `k(ubecolor)` and `helm`.  Note that the scripts assume all optional packages mentioned above have been installed.
