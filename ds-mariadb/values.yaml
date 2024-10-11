@@ -1,0 +1,35 @@
+persistence:
+  size: 5Gi
+  hostPath: "/microk8s-data/ds-mariadb"
+
+traefik:
+  path: /phpmyadmin
+
+# SUBCHARTS
+
+mariadb:
+  nameOverride: ds-mariadb
+  fullnameOverride: ds-mariadb
+  auth:
+    existingSecret: ds-mariadb
+  primary:
+    persistence:
+      existingClaim: ds-mariadb-pvc
+  pdb:
+    create: false
+  # Uncomment below if creating new persistent volume
+  # volumePermissions:
+  #   enabled: true
+
+phpmyadmin:
+  nameOverride: ds-mariadb-phpmyadmin
+  fullnameOverride: ds-mariadb-phpmyadmin
+  extraEnvVars:
+  # Set the root URL for phpmyadmin. Use localhost as Traefik will handle the reverse proxy.
+  - name: PMA_ABSOLUTE_URI
+    value: http://localhost:8000/phpmyadmin
+  pdb:
+    create: false
+  db:
+    allowArbitraryServer: false
+    host: ds-mariadb

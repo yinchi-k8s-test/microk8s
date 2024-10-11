@@ -1,0 +1,5 @@
+apiVersion: v2
+name: ui-homepage
+description: Homepage linking to the public services of the cluster.
+type: application
+version: 0.1.0

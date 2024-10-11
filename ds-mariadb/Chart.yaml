@@ -1,0 +1,13 @@
+apiVersion: v2
+name: ds-postgres
+description: PostgreSQL
+type: application
+version: 0.1.0
+appVersion: "11.4.3"
+dependencies:
+  - name: mariadb
+    version: 19.1.0
+    repository: https://charts.bitnami.com/bitnami
+  - name: phpmyadmin
+    version: 17.0.7
+    repository: https://charts.bitnami.com/bitnami

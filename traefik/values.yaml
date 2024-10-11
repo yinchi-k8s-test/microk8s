@@ -1,0 +1,24 @@
+providers:
+  kubernetesIngress:
+    enabled: false
+  kubernetesGateway:
+    enabled: true
+gateway:
+  listeners:
+    web:
+      namespacePolicy: All
+
+service:
+  type: NodePort
+
+ingressRoute:
+  dashboard:
+    enabled: True
+
+ports:
+  web:
+    nodePort: 30000
+  traefik:
+    expose:
+      default: true
+    nodePort: 30001

@@ -1,0 +1,6 @@
+**/*.tgz
+**/Chart.lock
+
+**/*secret*
+!**/*create-secret*
+!**/*secret.example*
