@@ -1,0 +1,16 @@
+traefik:
+  path: /argo
+
+argo-workflows:
+  nameOverride: argo-workflows
+  fullnameOverride: argo-workflows
+  namespaceOverride: argo
+
+  server:
+    baseHref: /argo/
+    authModes:
+      - server
+
+  controller:
+    workflowNamespaces:
+      - argo

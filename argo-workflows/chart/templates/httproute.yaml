@@ -15,9 +15,9 @@ spec:
         type: PathPrefix
         value: "{{ .Values.traefik.path }}"
     backendRefs:
-    - name: "{{ .Release.Name }}-phpmyadmin"
-      namespace: default
-      port: 80
+    - name: "{{ .Release.Name }}-server"
+      namespace: "{{ .Release.Namespace }}"
+      port: 2746
     filters:
     - type: ExtensionRef
       extensionRef:
