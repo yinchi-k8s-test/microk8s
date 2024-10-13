@@ -1,0 +1,11 @@
+nameOverride: argo-workflows
+fullnameOverride: argo-workflows
+namespaceOverride: argo
+
+server:
+  authModes:
+    - server
+
+controller:
+  workflowNamespaces:
+    - argo

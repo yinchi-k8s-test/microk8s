@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: fail-
+  labels:
+    workflows.argoproj.io/archive-strategy: "false"
+spec:
+  entrypoint: command-not-found
+  templates:
+  - name: command-not-found
+    container:
+      image: busybox
+      command: [command-not-found]

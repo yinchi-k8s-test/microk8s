@@ -4,3 +4,8 @@
 **/*secret*
 !**/*create-secret*
 !**/*secret.example*
+
+# Python
+**/__pycache__/
+**/.venv/
+**/uv.lock
