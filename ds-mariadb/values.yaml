@@ -15,6 +15,10 @@ mariadb:
   primary:
     persistence:
       existingClaim: ds-mariadb-pvc
+    service:
+      type: NodePort
+      nodePorts:
+        mysql: 32001
   pdb:
     create: false
   # Uncomment below if creating new persistent volume
