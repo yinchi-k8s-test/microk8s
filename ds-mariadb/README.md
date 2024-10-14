@@ -33,3 +33,10 @@ Change `$MARIADB_HOST` and `filename` above as desired.  Enter the root password
 ### Restoring backups (not tested)
 
 See the [MariaDB documentation](https://mariadb.com/kb/en/restoring-data-from-dump-files/).
+
+## Large files
+
+> [!WARNING]
+> To enable larger files (e.g. `BLOB` or `JSON` columns), the `max_allowed_packet` variable needs to be increased. This can be done in phpMyAdmin as shown below. Note however that sending too large a file can still cause the query to fail, or even crash the database!
+
+![alt text](readme_img/mariadb_max_allowed_packet.png)
