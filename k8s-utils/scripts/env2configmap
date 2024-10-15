@@ -6,7 +6,9 @@ import click
 @click.command()
 @click.argument('name')
 @click.argument('filename', type=click.Path(exists=True))
-@click.option('-n', '--namespace', help='The namespace to add the Secret to.')
+@click.option('-n', '--namespace',
+              help='The namespace to add the Secret to.',
+              default='default')
 @click.help_option("--help", "-h")
 def create(name, namespace, filename):
     """Generate YAML to create a Kubernetes ConfigMap from an env file.
