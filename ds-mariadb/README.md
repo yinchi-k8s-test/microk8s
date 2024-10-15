@@ -4,7 +4,12 @@ This directory contains a Helm chart and install scripts for MariaDB and the php
 
 ## Setup
 
-1. Copy `secret.example.env` to `secret.env` and edit the file to change the root account password.  Then, source `create-secret.sh` to create the `ds-mariadb` Kubernetes secret.
+0. Install the scripts in the `k8s-utils` directory if you haven't already (use `. install.sh`).
+
+1. Copy `secret.example.env` to `secret.env` and edit the file to change the root account password.  Then, invoke the following to create the `ds-mariadb` Kubernetes secret:
+  ```bash
+  env2secret ds-mariadb secret.env > templates/secret.yaml
+  ```
 
 2. Install the chart dependecies using `helm dependency update`.
 

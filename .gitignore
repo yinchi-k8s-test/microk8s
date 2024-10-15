@@ -1,11 +1,16 @@
-**/*.tgz
-**/Chart.lock
+# Helm
+*.tgz
+Chart.lock
 
-**/*secret*
-!**/*create-secret*
-!**/*secret.example*
+# Secrets
+*secret*
+!*create-secret*
+!*secret.example*
+
+# Everything in k8s-utils gets tracked
+!k8s-utils/**/*
 
 # Python
-**/__pycache__/
-**/.venv/
-**/uv.lock
+__pycache__/
+.venv/
+uv.lock

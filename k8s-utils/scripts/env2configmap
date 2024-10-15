@@ -1,0 +1,24 @@
+#! /usr/bin/env python3
+
+import os
+import click
+
+@click.command()
+@click.argument('name')
+@click.argument('filename', type=click.Path(exists=True))
+@click.option('-n', '--namespace', help='The namespace to add the Secret to.')
+@click.help_option("--help", "-h")
+def create(name, namespace, filename):
+    """Generate YAML to create a Kubernetes ConfigMap from an env file.
+
+        \b
+        NAME is the ConfigMap name.
+        FILENAME is the path to the env file.
+
+    The env file should contain a list of "key=value" lines."""
+
+    os.system(f'kubectl create configmap {name} --from-env-file {filename} '
+               f'--dry-run=client -o yaml -n {namespace}')
+
+if __name__ == '__main__':
+    create()
