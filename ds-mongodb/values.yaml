@@ -1,0 +1,28 @@
+persistence:
+  size: 5Gi
+  hostPath: "/microk8s-data/ds-mariadb"
+
+traefik:
+  path: /mongo-express
+
+# SUBCHARTS
+
+mongodb:
+  nameOverride: ds-mongodb
+  fullnameOverride: ds-mongodb
+  namespaceOverride: default
+  architecture: standalone
+  useStatefulSet: true
+  auth:
+    existingSecret: ds-mongodb
+  pdb:
+    create: false
+  service:
+    type: NodePort
+    nodePorts:
+      mongodb: 32002
+  persistence:
+    existingClaim: ds-mongodb-pvc
+  # Uncomment below if creating new persistent volume
+  # volumePermissions:
+  #   enabled: true

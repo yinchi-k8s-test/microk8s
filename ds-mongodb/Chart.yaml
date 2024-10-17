@@ -1,0 +1,10 @@
+apiVersion: v2
+name: ds-mongodb
+description: MongoDB
+type: application
+version: 0.1.0
+appVersion: "8.0.1"
+dependencies:
+  - name: mongodb
+    version: 16.0.3
+    repository: https://charts.bitnami.com/bitnami
